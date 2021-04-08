@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <input id="display" type="text">
+        <table>
+            <tr>
+                <td><input class="btns" onclick="typ('1')" type="button" value="1"></td>
+                <td><input class="btns" onclick="typ('2')" type="button" value="2"></td>
+                <td><input class="btns" onclick="typ('3')" type="button" value="3"></td>
+                <td><input class="btns" onclick="typ('/')" type="button" value="/"></td>
+            </tr>
+            <tr>
+                <td><input class="btns" onclick="typ('4')" type="button" value="4"></td>
+                <td><input class="btns" onclick="typ('5')" type="button" value="5"></td>
+                <td><input class="btns" onclick="typ('6')" type="button" value="6"></td>
+                <td><input class="btns" onclick="typ('*')" type="button" value="*"></td>
+            </tr>
+            <tr>
+                <td><input class="btns" onclick="typ('7')" type="button" value="7"></td>
+                <td><input class="btns" onclick="typ('8')" type="button" value="8"></td>
+                <td><input class="btns" onclick="typ('9')" type="button" value="9"></td>
+                <td><input class="btns" onclick="typ('+')" type="button" value="+"></td>
+            </tr>
+            <tr>
+                <td><input class="btns" onclick="typ('0')" type="button" value="0"></td>
+                <td><input class="btns" onclick="typ('.')" type="button" value="."></td>
+                <td><input class="btns" onclick="clr('')" type="button" value="c"></td>
+                <td><input class="btns" onclick="typ('-')" type="button" value="-"></td>
+            </tr>
+            <tr>
+                <td><input id="resultbutton" class="btns" onclick="result()" type="button" value="="></td>
+                <td><input class="btns" onclick="typ('00')" type="button" value="00"></td>
+                <td><input class="btns" onclick="typ('(')" type="button" value="("></td>
+                <td><input class="btns" onclick="typ(')')" type="button" value=")"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var dis = document.getElementById('display');
+
+        function typ(val) {
+            dis.value += val
+        }
+
+        function result() {
+            var x = document.getElementById('display').value
+            var y = eval(x)
+            dis.value = y
+        }
+
+        function clr() {
+            document.getElementById('display').value = "";
+            console.log('clear the screen now')
+        }
+    </script>
+</body>
+
+</html>
